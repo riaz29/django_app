@@ -9,6 +9,9 @@ from django.http import HttpResponse ,HttpResponseNotFound
 # def task2(request):
 #     return HttpResponse("This is task 2")
 
+def tasks_int(request, task):
+    return HttpResponse(task)
+
 def tasks(request, task):
     task_text = None
     if task == "task1":
