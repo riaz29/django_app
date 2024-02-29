@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest
-from django.http import HttpResponse ,HttpResponseNotFound
+from django.http import HttpResponse ,HttpResponseNotFound , HttpResponseRedirect
 # Create your views here.
 
 task_dict ={
@@ -19,7 +19,9 @@ task_dict ={
 #     return HttpResponse("This is task 2")
 
 def tasks_int(request, task):
-    return HttpResponse(task)
+    tasks = list(task_dict.keys())
+    redirect_task = tasks[task-1]
+    return HttpResponseRedirect("/app1/" + redirect_task)
 
 def tasks(request, task):
     try:
