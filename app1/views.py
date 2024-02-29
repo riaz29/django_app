@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.http import HttpResponse ,HttpResponseNotFound , HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 
 task_dict ={
@@ -21,7 +22,8 @@ task_dict ={
 def tasks_int(request, task):
     tasks = list(task_dict.keys())
     redirect_task = tasks[task-1]
-    return HttpResponseRedirect("/app1/" + redirect_task)
+    reverse_url = reverse("task-name", args=[redirect_task]) # /app1/task1 or task2 etc
+    return HttpResponseRedirect(reverse_url)
 
 def tasks(request, task):
     try:
