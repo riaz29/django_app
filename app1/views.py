@@ -28,7 +28,8 @@ def tasks_int(request, task):
 def tasks(request, task):
     try:
         task_text = task_dict[task]
-        return HttpResponse(task_text)
+        response_text = f"<h1>{task_text}</h1>"
+        return HttpResponse(response_text)
     except:
         return HttpResponseNotFound("Invalid Task")
         
