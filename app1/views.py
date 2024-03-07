@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.http import HttpResponse ,HttpResponseNotFound , HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string
 # Create your views here.
 
 task_dict ={
@@ -36,8 +37,9 @@ def tasks_int(request, task):
 
 def tasks(request, task):
     try:
-        task_text = task_dict[task]
-        response_text = f"<h1>{task_text}</h1>"
+        # task_text = task_dict[task]
+        # response_text = f"<h1>{task_text}</h1>"
+        response_text = render_to_string("tasks/task.html")
         return HttpResponse(response_text)
     except:
         return HttpResponseNotFound("Invalid Task")
