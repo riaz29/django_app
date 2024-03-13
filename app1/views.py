@@ -41,7 +41,7 @@ def tasks(request, task):
         # response_text = f"<h1>{task_text}</h1>"
         # response_text = render_to_string("tasks/task.html")
         # return HttpResponse(response_text)
-        return render(request , "tasks/task.html", {"text_value" : task_text})
+        return render(request , "tasks/task.html", {"text_value" : task_text , "task" : task})
     except:
         return HttpResponseNotFound("Invalid Task")
         
