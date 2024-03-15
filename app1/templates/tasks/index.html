@@ -11,7 +11,7 @@
     <body>
         <ul>
         {% for task in task %}
-            <li>{{task}}</li>
+            <li><a href="{% url "task-name" task=task %}">{{task}}</a></li>
         {% endfor %}
         </ul>
     </body>
