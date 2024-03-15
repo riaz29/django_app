@@ -23,12 +23,16 @@ def index(request):
     list_item = ""
     tasks = list(task_dict.keys())
     
-    for task in tasks:
-        capital_task = task.capitalize()
-        task_path = reverse("task-name", args=[task])
-        list_item += f"<li><a href=\"{task}\">{capital_task}</a></li>"
-    response_task = f"<ul>{list_item}</ul>"
-    return HttpResponse(response_task)
+    return render (request , "tasks/index.html", {
+        "task" : tasks
+    })
+    # for task in tasks:
+    #     capital_task = task.capitalize()
+    #     task_path = reverse("task-name", args=[task])
+    #     list_item += f"<li><a href=\"{task}\">{capital_task}</a></li>"
+    # response_task = f"<ul>{list_item}</ul>"
+    # return HttpResponse(response_task)
+
 def tasks_int(request, task):
     tasks = list(task_dict.keys())
     redirect_task = tasks[task-1]
