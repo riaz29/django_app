@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title_text %} {{task | title}}{% endblock %}
-{% include './includes/header.html' %}
+{% include 'templates/task/includes/header.html' %}
     {% block content %}
         <h1>Task Here</h1>
         <h1>{{task | title}}</h1>
