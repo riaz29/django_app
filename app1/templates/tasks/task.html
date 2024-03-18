@@ -11,6 +11,10 @@
     <body>
         <h1>Task Here</h1>
         <h1>{{task | title}}</h1>
-        <h2>{{text_value}}</h2>
-    </body>
+        {% if text_value is not None %}
+            <h2>{{text_value}}</h2>
+        {% else %}
+            <p>Text value is None</p>
+        {% endif %}    
+        </body>
 </html>

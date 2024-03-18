@@ -11,7 +11,7 @@ task_dict ={
     "task3":"This is task3",
     "task4":"This is task4",
     "task5":"This is task5",
-    "task6":"This is task6",
+    "task6":None,
 }
 
 # def task1(request):
