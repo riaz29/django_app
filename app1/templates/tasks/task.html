@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tasks List</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block title_text %} {{task | title}}{% endblock %}
+    {% block content %}
         <h1>Task Here</h1>
         <h1>{{task | title}}</h1>
         {% if text_value is not None %}
@@ -16,5 +8,4 @@
         {% else %}
             <p>Text value is None</p>
         {% endif %}    
-        </body>
-</html>
+    {% endblock %}

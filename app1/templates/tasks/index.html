@@ -1,10 +1,10 @@
-{% extends 'base.html' %}S
-        {% block title_text %}Tasks List Inherit {% endblock %}
-        {% block content%}
+{% extends 'base.html' %}
+    {% block title_text %}Tasks List Inherit {% endblock %}
+    {% block content%}
         <ul>
         {% for task in task %}
             <li><a href="{% url "task-name" task=task %}">{{task}}</a></li>
         {% endfor %}
         </ul>
-        {% endblock %}
+    {% endblock %}
 
