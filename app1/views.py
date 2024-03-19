@@ -47,7 +47,7 @@ def tasks(request, task):
         # return HttpResponse(response_text)
         return render(request , "tasks/task.html", {"text_value" : task_text , "task" : task})
     except:
-        return HttpResponseNotFound("Invalid Task")
+        return render(request , "404.html" )
         
 # def tasks(request, task):
 #     task_text = None
